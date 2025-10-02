@@ -86,13 +86,6 @@ docker run --rm -v $(pwd):/workspace -v /var/run/docker.sock:/var/run/docker.soc
   --output-name my-security-scan
 ```
 
-**Timestamped scan results:**
-```bash
-docker run --rm -v $(pwd):/workspace -v /var/run/docker.sock:/var/run/docker.sock \
-  sast-dast-scanner --repo https://github.com/user/repo.git \
-  --output-name "scan-$(date +%Y%m%d-%H%M%S)"
-```
-
 **Available CLI options:**
 ```bash
 docker run --rm sast-dast-scanner --help
@@ -189,36 +182,6 @@ export GITLEAKS_CONFIG=/path/to/gitleaks.toml
 - **Gitleaks**: Configure custom secret patterns
 - **Custom SAST**: Edit `utils/sast_runner.py` for regex rules
 
-## 🔧 Advanced Usage
-
-### Automated CI/CD Integration
-```bash
-# Non-interactive scanning for CI/CD pipelines
-python3 scanner.py --batch-mode \
-  --repo-url https://github.com/example/repo \
-  --branch main \
-  --output-dir ./security-reports
-```
-
-### Docker-based Scanning
-```bash
-# Run scanner in Docker container
-docker run -v $(pwd):/workspace \
-  -v /var/run/docker.sock:/var/run/docker.sock \
-  security-scanner:latest python3 scanner.py
-```
-
-### Selective Scanning
-```bash
-# Run only SAST scanning
-python3 scanner.py --sast-only
-
-# Run only container scanning
-python3 scanner.py --container-only
-
-# Skip secret scanning
-python3 scanner.py --no-secrets
-```
 
 ## 📈 Security Benefits
 
