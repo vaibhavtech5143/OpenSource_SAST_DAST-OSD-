@@ -1,0 +1,92 @@
+# Bearer configuration for OWASP Juice Shop
+version: v1
+
+# Enable all rules for maximum coverage
+rules:
+  all: true
+
+# Configure which file types to scan
+scan:
+  languages:
+    - javascript
+    - typescript
+    - python
+    - go
+    - java
+    - c
+    - c++
+    - c#
+    - ruby
+    - php
+    - swift
+    - rust
+
+
+# Include all relevant directories
+include_paths:
+  - '**/*.js'
+  - '**/*.ts'
+  - '**/*.jsx'
+  - '**/*.tsx'
+  - '**/*.mjs'
+  - '**/*.cjs'
+  - '**/*.py'
+  - '**/*.go'
+  - '**/*.java'
+  - '**/*.c'
+  - '**/*.cpp'
+  - '**/*.cs'
+  - '**/*.rb'
+  - '**/*.php'
+  - '**/*.swift'
+  - '**/*.rs'
+  - '**/*.m'
+  - '**/*.mm'
+  - '**/*.h'
+  - '**/*.hpp'
+  - '**/*.hxx'
+  - '**/*.h++'
+  
+
+# Exclude common directories and large files
+exclude_paths:
+  # Test files and directories
+  - '**/node_modules/**'
+  - '**/test/**'
+  - '**/tests/**'
+  - '**/__tests__/**'
+  - '**/*.test.*'
+  - '**/*.spec.*'
+  - '**/test_*.*'
+  - '**/*_test.*'
+  
+  # Build and dependency directories
+  - '**/dist/**'
+  - '**/build/**'
+  - '**/vendor/**'
+  - '**/bower_components/**'
+  - '**/.git/**'
+  - '**/.github/**'
+  - '**/.vscode/**'
+  - '**/.idea/**'
+  
+  # Large files that often cause timeouts
+  - '**/assets/**/three.js'
+  - '**/vendor/**/*.min.js'
+  - '**/node_modules/three/**'
+  - '**/node_modules/**/*.min.js'
+  - '**/*.min.js'
+  - '**/*.bundle.js'
+  - '**/*.min.css'
+  
+  # Ignore all test files
+  - '**/*.test.*'
+  - '**/*.spec.*'
+  - '**/test/**'
+  - '**/tests/**'
+  - '**/__tests__/**'
+  - '**/fixtures/**'
+  - '**/examples/**'
+  - '**/demos/**'
+  
+
