@@ -55,7 +55,7 @@ pip3 install -r requirements.txt
 python3 scanner.py
 ```
 
-**Alternative: Docker Run (Still In Testing There Are VArious Bugs If you can solve them fell free to use this approach):**
+**Alternative: Docker Run (Still In Testing There Are Various Bugs If you can solve them fell free to use this approach):**
 
 ```bash
 # Build the scanner
